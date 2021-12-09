@@ -1,0 +1,31 @@
+[
+  {
+    "_id": "619db664d27bba52248bc593",
+    "name": "Сонгоно уу",
+    "createdAt": "2021-11-24T03:49:56.246Z",
+    "slug": "songono-uu",
+    "__v": 0
+},
+{
+    "_id": "619db6d6d27bba52248bc5b4",
+    "name": "Шинэ сэтгүүл",
+    "createdAt": "2021-11-24T03:51:50.550Z",
+    "slug": "shine-setguul",
+    "__v": 0
+},
+{
+    "_id": "619db6ddd27bba52248bc5b6",
+    "name": "Онцлох иргэн",
+    "createdAt": "2021-11-24T03:51:57.819Z",
+    "slug": "oncloh-irgen",
+    "__v": 0
+},
+{
+    "_id": "619db6e3d27bba52248bc5b8",
+    "name": "Ноцтой мэдээ",
+    "createdAt": "2021-11-24T03:52:03.928Z",
+    "slug": "noctoy-medee",
+    "__v": 0
+}
+  ]
+  

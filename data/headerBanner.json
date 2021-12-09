@@ -1,0 +1,26 @@
+[
+    {
+        "photo": "headerBanner__619d2c4e2c9ec74ccc7abd21.png",
+        "_id": "619d2c4e2c9ec74ccc7abd21",
+        "name": "iHelp magazine1",
+        "createUser": "5ea015a84448022f50c58be5",
+        "createdAt": "2021-11-23T18:00:46.412Z",
+        "__v": 0
+    },
+    {
+        "photo": "headerBanner__619d2ca72c9ec74ccc7abd2b.jpg",
+        "_id": "619d2ca72c9ec74ccc7abd2b",
+        "name": "Шинэ платформ",
+        "createUser": "5ea015a84448022f50c58be5",
+        "createdAt": "2021-11-23T18:02:15.496Z",
+        "__v": 0
+    },
+    {
+        "photo": "headerBanner__619d2cb92c9ec74ccc7abd33.jpg",
+        "_id": "619d2cb92c9ec74ccc7abd33",
+        "name": "Нээсэн",
+        "createUser": "5ea015a84448022f50c58be5",
+        "createdAt": "2021-11-23T18:02:33.709Z",
+        "__v": 0
+    }
+]
