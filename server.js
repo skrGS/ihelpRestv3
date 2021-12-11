@@ -38,7 +38,12 @@ const app = express();
 connectDB();
 
 // Манай рест апиг дуудах эрхтэй сайтуудын жагсаалт :
-var whitelist = ["http://localhost:3000", "http://localhost:3005"];
+var whitelist = [
+  "http://localhost:3000",
+  "http://localhost:3005",
+  "www.ihelp.mn",
+  "ihelp.mn",
+];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
 var corsOptions = {
