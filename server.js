@@ -41,10 +41,12 @@ connectDB();
 var whitelist = [
   "http://localhost:3000",
   "http://localhost:3005",
-  'http://www.ihelp.mn:80',
-  'http://ihelp.mn:80',
-  'https://www.ihelp.mn:80',
-  'https://ihelp.mn:80',
+  'http://www.ihelp.mn',
+  'http://ihelp.mn',
+  'https://www.ihelp.mn',
+  'https://ihelp.mn',
+  'http://207.174.212.161.mn',
+  'https://207.174.212.161.mn',
 ];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
