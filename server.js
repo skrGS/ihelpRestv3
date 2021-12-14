@@ -41,8 +41,10 @@ connectDB();
 var whitelist = [
   "http://localhost:3000",
   "http://localhost:3005",
-  "www.ihelp.mn",
-  "ihelp.mn",
+  'http://www.ihelp.mn:80',
+  'http://ihelp.mn:80',
+  'https://www.ihelp.mn:80',
+  'https://ihelp.mn:80',
 ];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
@@ -66,7 +68,6 @@ var corsOptions = {
 };
 // index.html-ийг public хавтас дотроос ол гэсэн тохиргоо
 app.use(express.static(path.join(__dirname, "public")));
-
 // Express rate limit : Дуудалтын тоог хязгаарлана
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
