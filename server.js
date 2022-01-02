@@ -19,6 +19,8 @@ const highlightCatsRoutes = require("./routes/highlightCats");
 const highlightsRoutes = require("./routes/highlights");
 const booksRoutes = require("./routes/books");
 const worksRoutes = require("./routes/works");
+const ahighlightsRoutes = require("./routes/ahighlights");
+const specialsRoutes = require("./routes/specials");
 const headerBannersRoutes = require("./routes/headerBanners");
 const plusSubsRoutes = require("./routes/plusSubs");
 const marketingSubsRoutes = require("./routes/marketingSub");
@@ -41,12 +43,12 @@ connectDB();
 var whitelist = [
   "http://localhost:3000",
   "http://localhost:3005",
-  'http://www.ihelp.mn',
-  'http://ihelp.mn',
-  'https://www.ihelp.mn',
-  'https://ihelp.mn',
-  'http://207.174.212.161.mn',
-  'https://207.174.212.161.mn',
+  "http://www.ihelp.mn",
+  "http://ihelp.mn",
+  "https://www.ihelp.mn",
+  "https://ihelp.mn",
+  "http://207.174.212.161.mn",
+  "https://207.174.212.161.mn",
 ];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
@@ -106,6 +108,8 @@ app.use(morgan("combined", { stream: accessLogStream }));
 // REST API RESOURSE
 app.use("/api/v1/books", booksRoutes);
 app.use("/api/v1/works", worksRoutes);
+app.use("/api/v1/ahighlights", ahighlightsRoutes);
+app.use("/api/v1/specials", specialsRoutes);
 app.use("/api/v1/headerBanners", headerBannersRoutes);
 app.use("/api/v1/plusSubs", plusSubsRoutes);
 app.use("/api/v1/marketingSubs", marketingSubsRoutes);
