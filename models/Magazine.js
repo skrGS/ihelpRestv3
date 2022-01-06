@@ -1,27 +1,16 @@
 const mongoose = require("mongoose");
 const { transliterate, slugify } = require("transliteration");
 
-const BookSchema = new mongoose.Schema(
+const MagazineSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Номын нэрийг оруулна уу"],
-      unique: true,
       trim: true,
-      maxlength: [250, "Номын нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
-    },
-    content: {
-      type: String,
-      trim: true,
-      maxlength: [5000, "Номын нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
     photo: {
       type: String,
       default: "no-photo.jpg",
-    },
-    photo1: {
-      type: String,
-      default: "no-photo1.jpg",
     },
 
     createUser: {
@@ -32,7 +21,6 @@ const BookSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: "User",
     },
-
     createdAt: {
       type: Date,
       default: Date.now,
@@ -41,7 +29,7 @@ const BookSchema = new mongoose.Schema(
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
 
-BookSchema.virtual("zohiogch").get(function () {
+MagazineSchema.virtual("zohiogch").get(function () {
   // this.author
   if (!this.author) return "";
 
@@ -52,4 +40,4 @@ BookSchema.virtual("zohiogch").get(function () {
   return tokens[0];
 });
 
-module.exports = mongoose.model("Book", BookSchema);
+module.exports = mongoose.model("Magazine", MagazineSchema);

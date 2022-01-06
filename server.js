@@ -19,6 +19,7 @@ const highlightCatsRoutes = require("./routes/highlightCats");
 const highlightsRoutes = require("./routes/highlights");
 const booksRoutes = require("./routes/books");
 const worksRoutes = require("./routes/works");
+const magazinesRoutes = require("./routes/magazines");
 const ahighlightsRoutes = require("./routes/ahighlights");
 const specialsRoutes = require("./routes/specials");
 const headerBannersRoutes = require("./routes/headerBanners");
@@ -108,6 +109,7 @@ app.use(morgan("combined", { stream: accessLogStream }));
 // REST API RESOURSE
 app.use("/api/v1/books", booksRoutes);
 app.use("/api/v1/works", worksRoutes);
+app.use("/api/v1/magazines", magazinesRoutes);
 app.use("/api/v1/ahighlights", ahighlightsRoutes);
 app.use("/api/v1/specials", specialsRoutes);
 app.use("/api/v1/headerBanners", headerBannersRoutes);
