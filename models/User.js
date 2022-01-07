@@ -4,18 +4,13 @@ const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 
 const UserSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Хэрэглэгчийн нэрийг оруулна уу"],
+  phone: {
+    type: Number,
+    required: [true, "Хэрэглэгчийн утасны дугаар оруулна уу"],
   },
   email: {
     type: String,
-    required: [true, "Хэрэглэгчийн имэйл хаягийг оруулж өгнө үү"],
     unique: true,
-    match: [
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      "Имэйл хаяг буруу байна.",
-    ],
   },
   role: {
     type: String,
