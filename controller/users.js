@@ -20,25 +20,25 @@ exports.register = asyncHandler(async (req, res, next) => {
 
 // логин хийнэ
 exports.login = asyncHandler(async (req, res, next) => {
-  const { email, password } = req.body;
+  const { phone, password } = req.body;
 
   // Оролтыгоо шалгана
 
-  if (!email || !password) {
-    throw new MyError("Имэл болон нууц үйгээ дамжуулна уу", 400);
+  if (!phone || !password) {
+    throw new MyError("Утас болон нууц үйгээ дамжуулна уу", 400);
   }
 
   // Тухайн хэрэглэгчийн хайна
-  const user = await User.findOne({ email }).select("+password");
+  const user = await User.findOne({ phone }).select("+password");
 
   if (!user) {
-    throw new MyError("Имэйл болон нууц үгээ зөв оруулна уу", 401);
+    throw new MyError("Утасны дугаар болон нууц үгээ зөв оруулна уу", 401);
   }
 
   const ok = await user.checkPassword(password);
 
   if (!ok) {
-    throw new MyError("Имэйл болон нууц үгээ зөв оруулна уу", 401);
+    throw new MyError("Утасны дугаар болон нууц үгээ зөв оруулна уу", 401);
   }
 
   const token = user.getJsonWebToken();

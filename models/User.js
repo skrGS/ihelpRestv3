@@ -6,11 +6,15 @@ const jwt = require("jsonwebtoken");
 const UserSchema = new mongoose.Schema({
   phone: {
     type: Number,
+    unique: true,
     required: [true, "Хэрэглэгчийн утасны дугаар оруулна уу"],
   },
   email: {
     type: String,
-    unique: true,
+    match: [
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+      "Имэйл хаяг буруу байна.",
+    ],
   },
   role: {
     type: String,
