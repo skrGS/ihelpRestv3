@@ -12,66 +12,37 @@ const WorkSchema = new mongoose.Schema(
       type: String,
       default: "no-photo.jpg",
     },
-    content: {
-      type: String,
-      trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
-    },
     workLink: {
       type: String,
       trim: true,
       maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
     },
-    title: {
+    work1: {
       type: String,
       trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
-    Requirements: {
+    work2: {
       type: String,
       trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
-    Requirements1: {
+    work3: {
       type: String,
       trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
-    Requirements2: {
+    work4: {
       type: String,
       trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
-    Requirements3: {
+    work5: {
       type: String,
       trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
-    Requirements4: {
-      type: String,
-      trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
-    },
-    Requirements5: {
-      type: String,
-      trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
-    },
-    Requirements6: {
-      type: String,
-      trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
-    },
-    Requirements7: {
-      type: String,
-      trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
-    },
-    footer: {
-      type: String,
-      trim: true,
-      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
-    },
+
     createUser: {
       type: mongoose.Schema.ObjectId,
       ref: "User",
