@@ -12,7 +12,12 @@ const WorkSchema = new mongoose.Schema(
       type: String,
       default: "no-photo.jpg",
     },
-    workLink: {
+    email: {
+      type: String,
+      trim: true,
+      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
+    },
+    phoneNumber: {
       type: String,
       trim: true,
       maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
