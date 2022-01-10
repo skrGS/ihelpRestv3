@@ -47,6 +47,26 @@ const WorkSchema = new mongoose.Schema(
       trim: true,
       maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
+    work6: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
+    work7: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
+    work8: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
+    work9: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
 
     createUser: {
       type: mongoose.Schema.ObjectId,
