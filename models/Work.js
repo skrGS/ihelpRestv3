@@ -12,7 +12,12 @@ const WorkSchema = new mongoose.Schema(
       type: String,
       default: "no-photo.jpg",
     },
-    workLink: {
+    email: {
+      type: String,
+      trim: true,
+      maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
+    },
+    phoneNumber: {
       type: String,
       trim: true,
       maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
@@ -38,6 +43,26 @@ const WorkSchema = new mongoose.Schema(
       maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
     work5: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
+    work6: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
+    work7: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
+    work8: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
+    work9: {
       type: String,
       trim: true,
       maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
