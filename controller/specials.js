@@ -45,6 +45,18 @@ exports.getSpecial = asyncHandler(async (req, res, next) => {
   if (!special) {
     throw new MyError(req.params.id + " ID-тэй ажил байхгүй байна.", 404);
   }
+    // Хандалт тоологч
+  if(special.count == null) {
+      // default data
+      const beginCount = new Special({
+          count : 1
+      })
+      beginCount.save()
+  }
+  else {
+      special.count += 1;
+      special.save()
+  }
 
   res.status(200).json({
     success: true,

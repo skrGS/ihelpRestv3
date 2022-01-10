@@ -14,7 +14,10 @@ const HighlightSchema = new mongoose.Schema(
       type: String,
       default: "no-photo.jpg",
     },
-
+    count: {
+      type: Number,
+      default: 0,
+    },
     content: {
       type: String,
       required: [true, "Номын тайлбарыг оруулна уу"],

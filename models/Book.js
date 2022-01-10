@@ -32,6 +32,7 @@ const BookSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: "User",
     },
+    count: Number,
 
     createdAt: {
       type: Date,

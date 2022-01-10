@@ -46,6 +46,19 @@ exports.getAhighlight = asyncHandler(async (req, res, next) => {
     throw new MyError(req.params.id + " ID-тэй ажил байхгүй байна.", 404);
   }
 
+  // Хандалт тоологч
+  if (ahighlight.count == null) {
+      // default data
+      const beginCount = new Ahighlight({
+          count : 1
+      })
+      beginCount.save()
+  }
+  else {
+      ahighlight.count += 1;
+      ahighlight.save()
+  }
+
   res.status(200).json({
     success: true,
     data: ahighlight,

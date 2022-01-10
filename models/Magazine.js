@@ -8,6 +8,10 @@ const MagazineSchema = new mongoose.Schema(
       trim: true,
       maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
+    count: {
+      type: Number,
+      default: 0,
+    },
     photo: {
       type: String,
       default: "no-photo.jpg",

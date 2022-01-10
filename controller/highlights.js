@@ -73,6 +73,19 @@ exports.getHighlight = asyncHandler(async (req, res, next) => {
   if (!highlight) {
     throw new MyError(req.params.id + " ID-тэй ном байхгүй байна.", 404);
   }
+  // Хандалт тоологч
+  if (highlight.count == null) {
+      // default data
+      const beginCount = new Highlight({
+          count : 1
+      })
+      beginCount.save()
+  }
+  else {
+      highlight.count += 1;
+      highlight.save()
+  }
+  
 
   res.status(200).json({
     success: true,

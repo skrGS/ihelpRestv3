@@ -45,6 +45,19 @@ exports.getMagazine = asyncHandler(async (req, res, next) => {
   if (!magazine) {
     throw new MyError(req.params.id + " ID-тэй ажил байхгүй байна.", 404);
   }
+  // Хандалт тоологч
+  if(magazine.count === null) {
+    // default data
+    const beginCount = new Magazine({
+        count : 1
+    })
+    beginCount.save()
+}
+else {
+    magazine.count += 1;
+    magazine.save()
+    console.log("visitor arrived: ",magazine.count)
+}
 
   res.status(200).json({
     success: true,

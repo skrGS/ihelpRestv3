@@ -1,4 +1,5 @@
 const Book = require("../models/Book");
+const Visitor = require("../models/Visitor");
 const path = require("path");
 const MyError = require("../utils/myError");
 const asyncHandler = require("express-async-handler");
@@ -11,6 +12,7 @@ exports.getBooks = asyncHandler(async (req, res, next) => {
   const limit = parseInt(req.query.limit) || 5;
   const sort = req.query.sort;
   const select = req.query.select;
+  
 
   ["select", "sort", "page", "limit"].forEach((el) => delete req.query[el]);
 
@@ -43,9 +45,33 @@ exports.getUserBooks = asyncHandler(async (req, res, next) => {
 exports.getBook = asyncHandler(async (req, res, next) => {
   const book = await Book.findById(req.params.id);
 
+
   if (!book) {
     throw new MyError(req.params.id + " ID-тэй ном байхгүй байна.", 404);
   }
+
+  if(book.count === null) {
+          
+    // Creating a new default record
+    const beginCount = new Book({
+        count : 1
+    })
+
+    // Saving in the database
+    beginCount.save()
+
+}
+else{
+      
+    // Incrementing the count of visitor by 1
+    book.count += 1;
+
+    // Saving to the database
+    book.save()
+
+    // Logging the visitor count in the console
+    console.log("visitor arrived: ",book.count)
+}
 
   res.status(200).json({
     success: true,
