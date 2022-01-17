@@ -19,6 +19,7 @@ const highlightCatsRoutes = require("./routes/highlightCats");
 const highlightsRoutes = require("./routes/highlights");
 const booksRoutes = require("./routes/books");
 const worksRoutes = require("./routes/works");
+const webWorksRoutes = require("./routes/webworks");
 const magazinesRoutes = require("./routes/magazines");
 const ahighlightsRoutes = require("./routes/ahighlights");
 const specialsRoutes = require("./routes/specials");
@@ -49,12 +50,10 @@ var whitelist = [
   "http://ihelp.mn",
   "https://www.ihelp.mn",
   "https://ihelp.mn",
-  "https://esudalgaa.mn",
-  "https://www.esudalgaa.mn",
-  "http://esudalgaa.mn",
-  "http://www.esudalgaa.mn",
-  "https://165.22.55.132:80",
-  "http://165.22.55.132:80",
+  "https://novelistgroup.com",
+  "https://www.novelistgroup.com",
+  "http://novelistgroup.com",
+  "http://www.novelistgroup.com",
 ];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
@@ -114,6 +113,7 @@ app.use(morgan("combined", { stream: accessLogStream }));
 // REST API RESOURSE
 app.use("/api/v1/books", booksRoutes);
 app.use("/api/v1/works", worksRoutes);
+app.use("/api/v1/webworks", webWorksRoutes);
 app.use("/api/v1/magazines", magazinesRoutes);
 app.use("/api/v1/ahighlights", ahighlightsRoutes);
 app.use("/api/v1/specials", specialsRoutes);
