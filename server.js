@@ -50,6 +50,8 @@ var whitelist = [
   "http://ihelp.mn",
   "https://www.ihelp.mn",
   "https://ihelp.mn",
+  "https://novelistgroup.com",
+  "https://www.novelistgroup.com",
 ];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
