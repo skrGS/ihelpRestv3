@@ -4,6 +4,7 @@ const asyncHandler = require("express-async-handler");
 const paginate = require("../utils/paginate");
 const sendEmail = require("../utils/email");
 const crypto = require("crypto");
+const { NONAME } = require("dns");
 
 // register
 exports.register = asyncHandler(async (req, res, next) => {
@@ -46,6 +47,8 @@ exports.login = asyncHandler(async (req, res, next) => {
   const cookieOption = {
     expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
     httpOnly: true,
+    sameSite: "none",
+    secure: true,
   };
 
   res.status(200).cookie("amazon-token", token, cookieOption).json({
@@ -59,6 +62,8 @@ exports.logout = asyncHandler(async (req, res, next) => {
   const cookieOption = {
     expires: new Date(Date.now() - 365 * 24 * 60 * 60 * 1000),
     httpOnly: true,
+    SameSite: None,
+    Secure
   };
 
   res.status(200).cookie("amazon-token", null, cookieOption).json({
