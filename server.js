@@ -49,8 +49,12 @@ var whitelist = [
   "http://ihelp.mn",
   "https://www.ihelp.mn",
   "https://ihelp.mn",
-  "http://207.174.212.161.mn",
-  "https://207.174.212.161.mn",
+  "https://esudalgaa.mn",
+  "https://www.esudalgaa.mn",
+  "http://esudalgaa.mn",
+  "http://www.esudalgaa.mn",
+  "https://165.22.55.132:80",
+  "http://165.22.55.132:80",
 ];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
