@@ -26,6 +26,29 @@ exports.getNotifications = asyncHandler(async (req, res, next) => {
     .skip(pagination.start - 1)
     .limit(limit);
 
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    throw new MyError(req.params.id + " ID-тэй хэрэглэгч байхгүй байна.", 404);
+  }
+
+  // Нотиф
+  if (user.isWatched == true) {
+      // default data
+      const beginCount = new User({
+        notifCount : 0
+      })
+      beginCount.save()
+  }
+  else {
+      user.notifCount = notifications.length;
+      user.save()
+  }
+
+
+
+
+
   res.status(200).json({
     success: true,
     count: notifications.length,

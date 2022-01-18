@@ -49,6 +49,7 @@ exports.login = asyncHandler(async (req, res, next) => {
     httpOnly: true,
     sameSite: "none",
     secure: true,
+    
   };
 
   res.status(200).cookie("amazon-token", token, cookieOption).json({

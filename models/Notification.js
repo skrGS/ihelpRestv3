@@ -14,7 +14,6 @@ const NotificationSchema = new mongoose.Schema(
       trim: true,
       maxlength: [5000, " нэрний урт дээд тал нь 20 тэмдэгт байх ёстой."],
     },
-
     createUser: {
       type: mongoose.Schema.ObjectId,
       ref: "User",
