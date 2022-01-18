@@ -67,6 +67,11 @@ const WebWorkSchema = new mongoose.Schema(
       trim: true,
       maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
     },
+    workLink: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
 
     createUser: {
       type: mongoose.Schema.ObjectId,
