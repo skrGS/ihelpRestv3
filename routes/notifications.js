@@ -14,12 +14,12 @@ const router = express.Router();
 //"/api/v1/Notification"
 router
   .route("/")
-  .get(getNotifications)
+  .get(protect, getNotifications)
   .post(protect, authorize("admin", "operator"), createNotification);
 
 router
   .route("/:id")
-  .get(getNotification)
+  .get(protect, getNotification)
   .delete(protect, authorize("admin", "operator"), deleteNotification)
   .put(protect, authorize("admin", "operator"), updateNotification);
 

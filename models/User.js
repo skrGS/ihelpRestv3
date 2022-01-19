@@ -23,11 +23,11 @@ const UserSchema = new mongoose.Schema({
     enum: ["user", "operator", "admin"],
     default: "user",
   },
-  isWatched: {
-    type: Boolean,
-    default: false,
-  },
-  notifCount: Number,
+  readNotif: [{
+    type: mongoose.Schema.ObjectId,
+    ref: "Notification",
+    unique: true
+  }],
   password: {
     type: String,
     minlength: 4,

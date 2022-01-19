@@ -15,7 +15,7 @@ exports.getNotifications = asyncHandler(async (req, res, next) => {
   ["select", "sort", "page", "limit"].forEach((el) => delete req.query[el]);
 
   const pagination = await paginate(page, limit, Notification);
-
+  const user = await User.findById(req.userId)
   const notifications = await Notification.find(req.query, select)
     .populate({
       path: "category",
@@ -26,32 +26,12 @@ exports.getNotifications = asyncHandler(async (req, res, next) => {
     .skip(pagination.start - 1)
     .limit(limit);
 
-  const user = await User.findById(req.params.id);
-
-  if (!user) {
-    throw new MyError(req.params.id + " ID-тэй хэрэглэгч байхгүй байна.", 404);
-  }
-
-  // Нотиф
-  if (user.isWatched == true) {
-      // default data
-      const beginCount = new User({
-        notifCount : 0
-      })
-      beginCount.save()
-  }
-  else {
-      user.notifCount = notifications.length;
-      user.save()
-  }
-
-
-
-
+    
+  // const count = notifications.length - User.readNotif.length
 
   res.status(200).json({
     success: true,
-    count: notifications.length,
+    count: notifications.length - user.readNotif.length,
     data: notifications,
     pagination,
   });
@@ -64,20 +44,23 @@ exports.getUserNotifications = asyncHandler(async (req, res, next) => {
 
 exports.getNotification = asyncHandler(async (req, res, next) => {
   const notification = await Notification.findById(req.params.id);
-
+  const user = await User.findById(req.userId);
+  user.readNotif.addToSet(req.params.id);
+  user.save()
   if (!notification) {
     throw new MyError(req.params.id + " ID-тэй ажил байхгүй байна.", 404);
   }
-
+  console.log(user.readNotif.length)
   res.status(200).json({
     success: true,
     data: notification,
+    
   });
 });
 
 exports.createNotification = asyncHandler(async (req, res, next) => {
   req.body.createUser = req.userId;
-
+  console.log(req.userId)
   const notification = await Notification.create(req.body);
 
   res.status(200).json({
