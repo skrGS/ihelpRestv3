@@ -48,7 +48,7 @@ exports.login = asyncHandler(async (req, res, next) => {
     expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
     httpOnly: true,
     sameSite: "none",
-
+    secure: true,
   };
 
   res.status(200).cookie("amazon-token", token, cookieOption).json({
