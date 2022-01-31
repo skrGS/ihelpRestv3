@@ -58,7 +58,6 @@ else {
     magazine.save()
     console.log("visitor arrived: ",magazine.count)
 }
-console.log(magazine.photo[1])
 
   res.status(200).json({
     success: true,

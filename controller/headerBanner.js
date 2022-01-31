@@ -48,6 +48,10 @@ exports.getHeaderBanner = asyncHandler(async (req, res, next) => {
     throw new MyError(req.params.id + " ID-тэй ном байхгүй байна.", 404);
   }
 
+      headerBanner.count += 1;
+      headerBanner.save()
+      console.log("visitor arrived: ",headerBanner.count)
+
   res.status(200).json({
     success: true,
     data: headerBanner,
