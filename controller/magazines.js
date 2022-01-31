@@ -58,6 +58,7 @@ else {
     magazine.save()
     console.log("visitor arrived: ",magazine.count)
 }
+console.log(magazine.photo[1])
 
   res.status(200).json({
     success: true,
@@ -149,7 +150,7 @@ exports.uploadMagazinePhoto = asyncHandler(async (req, res, next) => {
     throw new MyError("Таны зурагны хэмжээ хэтэрсэн байна.", 400);
   }
 
-  file.name = `magazine__${req.params.id}${path.parse(file.name).ext}`;
+  file.name = `magazine_${req.params.id}_${magazine.photo.length}${path.parse(file.name).ext}`;
 
   file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, (err) => {
     if (err) {
@@ -159,7 +160,7 @@ exports.uploadMagazinePhoto = asyncHandler(async (req, res, next) => {
       );
     }
 
-    magazine.photo = file.name;
+    magazine.photo.push(file.name);
     magazine.save();
 
     res.status(200).json({

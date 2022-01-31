@@ -12,10 +12,10 @@ const MagazineSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    photo: {
+    photo: [{
       type: String,
       default: "no-photo.jpg",
-    },
+    }],
 
     createUser: {
       type: mongoose.Schema.ObjectId,
