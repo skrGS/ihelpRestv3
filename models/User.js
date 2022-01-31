@@ -4,6 +4,9 @@ const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 
 const UserSchema = new mongoose.Schema({
+  userName: {
+    type: String,
+  },
   phone: {
     type: Number,
     unique: true,
