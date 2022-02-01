@@ -12,10 +12,19 @@ const MagazineSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    photo: [{
+    facePhoto: {
       type: String,
       default: "no-photo.jpg",
-    }],
+    },
+    content: {
+      type: String,
+      trim: true,
+      maxlength: [250, " нэрний урт дээд тал нь 250 тэмдэгт байх ёстой."],
+    },
+    facePhoto2: {
+      type: String,
+      default: "no-photo.jpg",
+    },
 
     createUser: {
       type: mongoose.Schema.ObjectId,
